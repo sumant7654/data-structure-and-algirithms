@@ -8,30 +8,52 @@ public class SinglyLinkedListDelete {
         SinglyLinkedListDelete singlyLinkedListDelete = new SinglyLinkedListDelete();
         singlyLinkedListDelete.creteSinglyLinkedList(values);
         int location = 0;
-        singlyLinkedListDelete.removeElementFromSinglyLinkedList(values, location);
+        singlyLinkedListDelete.removeElementFromSinglyLinkedList(location);
+
+        singlyLinkedListDelete.traverseLinkedList();
+
+
+
     }
 
-    private void removeElementFromSinglyLinkedList(int[] values, int location) {
-        if (head == null) {
-            System.out.println("Singly LinkedList not exist");
-        } else {
-            if (location == 0) {
-                if (head == tail) {
-                    head = tail = null;
-                }else{
-                    head = head.getNext();
-                }
-            } else if (location==size) {
-                int temp = 0;
-                Node previousNode = head;
-                while (temp < size) {
-                    previousNode = previousNode.getNext();
+    private  void traverseLinkedList() {
+        System.out.println();
+        Node currentNode = head;
+        for(int i = 0; i <= size; i++){
+            System.out.print(currentNode.getValue());
+            if(i != size){
+                System.out.print(" | -> ");
+            }
+            currentNode = currentNode.getNext();
 
-                    temp++;
+        }
+
+    }
+
+    private void removeElementFromSinglyLinkedList(int location) {
+        if(head != null){
+            if(location == 0){
+                head = head.getNext();
+                size--;
+                if(size == 0){
+                    tail = head;
                 }
+            } else if(location <= size) {
+                int currentLocation = 1;
+                Node previousNode = head;
+                while(currentLocation != location){
+                    previousNode = previousNode.getNext();
+                    currentLocation++;
+                }
+                previousNode.setNext(previousNode.getNext().getNext());
+                if(size == location) {
+                    tail = previousNode;
+                }
+                size--;
             }
         }
-        System.out.println(head);
+
+
     }
 
     private void creteSinglyLinkedList(int[] values) {
