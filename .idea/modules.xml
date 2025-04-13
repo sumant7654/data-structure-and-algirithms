@@ -5,8 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/ArrayList/ArrayList.iml" filepath="$PROJECT_DIR$/ArrayList/ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/BigONotations/BigONotations.iml" filepath="$PROJECT_DIR$/BigONotations/BigONotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CircularSinglyLinkedList/CircularSinglyLinkedList.iml" filepath="$PROJECT_DIR$/CircularSinglyLinkedList/CircularSinglyLinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Data Structure and Algorithms.iml" filepath="$PROJECT_DIR$/Data Structure and Algorithms.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LinkedListSingle/LinkedListSingle.iml" filepath="$PROJECT_DIR$/LinkedListSingle/LinkedListSingle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SinglyLinkedList/SinglyLinkedList.iml" filepath="$PROJECT_DIR$/SinglyLinkedList/SinglyLinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/search/search.iml" filepath="$PROJECT_DIR$/search/search.iml" />
       <module fileurl="file://$PROJECT_DIR$/sort/sort.iml" filepath="$PROJECT_DIR$/sort/sort.iml" />
     </modules>
