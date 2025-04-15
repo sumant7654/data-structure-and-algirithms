@@ -17,6 +17,59 @@ public class CreateCircularSinglyLinkedList {
         System.out.println();
         searchNodeValue(400);
 
+        deleteNodeByPosition(4);
+        traverseCircularSingleLinkedList();
+
+    }
+
+    private static boolean deleteNodeByPosition(int position) {
+        if(head == null || position < 1 || position > size) {
+            return false;
+        }
+
+        if(position == 1) {
+            if (size == 1) {
+                head.setNext(null);
+                head = null;
+                tail = null;
+                size--;
+            } else {
+                Node temp = head;
+                head = head.getNext();
+                tail.setNext(temp.getNext());
+                temp = null;
+                size--;
+            }
+        }else if(position == size){
+                if(size == 1){
+                    head.setNext(null);
+                    head = null;
+                    tail = null;
+                    size--;
+                }else{
+                    Node temp = head;
+                    int count = 1;
+                    while(count < position - 1){
+                        temp = temp.getNext();
+                        count++;
+                    }
+                    temp.setNext(tail.getNext());
+                    tail = temp;
+                    size--;
+
+                }
+        }else{
+            Node temp = head;
+            int count = 1;
+            while(count < position - 1){
+                temp = temp.getNext();
+                count++;
+            }
+            temp.setNext(temp.getNext().getNext());
+            size--;
+        }
+        return true;
+
     }
 
     private static void searchNodeValue(int nodeValue) {
