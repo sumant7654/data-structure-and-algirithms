@@ -20,6 +20,19 @@ public class CreateCircularSinglyLinkedList {
         deleteNodeByPosition(4);
         traverseCircularSingleLinkedList();
 
+        deleteEntireCircularLinkedList();
+        traverseCircularSingleLinkedList();
+
+    }
+
+    private static void deleteEntireCircularLinkedList() {
+        if(head != null) {
+            head = null;
+            tail.setNext(null);
+            tail = null;
+            size = 0;
+            System.out.println("\nLinked List has been deleted");
+        }
     }
 
     private static boolean deleteNodeByPosition(int position) {
