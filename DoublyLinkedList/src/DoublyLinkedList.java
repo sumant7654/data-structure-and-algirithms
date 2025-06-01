@@ -9,18 +9,38 @@ public class DoublyLinkedList {
 
         insertNodeIntoDoubleLinkedList(25, 5);
         insertNodeIntoDoubleLinkedList(50, 2);
-        System.out.println("Traversal of DoublyLinkedList: ");
+        System.out.println("\nTraversal of DoublyLinkedList: ");
         traversalDoublyLinkedList(head);
-        System.out.println("Reverse Traversal of DoublyLinkedList: ");
+        System.out.println("\nReverse Traversal of DoublyLinkedList: ");
         reverseTraversalDoublyLinkedList(tail);
-        System.out.println("Searching of Node Value in DoublyLinkedList: ");
+        System.out.println("\nSearching of Node Value in DoublyLinkedList: ");
         searchNodeValueInDoublyLinkedList(head, 50);
         deleteNodeFromDoublyLinkedList(2);
-        System.out.println("Traversal of DoublyLinkedList After deleting A Node: ");
+        System.out.println("\nTraversal of DoublyLinkedList After deleting A Node: ");
+        traversalDoublyLinkedList(head);
+        deleteEntireDoublyLinkedList();
+        System.out.println("\nTraversal of DoublyLinkedList After deleting Entire Node: ");
         traversalDoublyLinkedList(head);
 
 
 
+    }
+
+    private static void deleteEntireDoublyLinkedList() {
+        if (head == null) {
+            System.out.println("DoublyLinkedList is empty");
+            return;
+        }
+        DoublyNode currentNode = head;
+        while(currentNode.next != null) {
+            DoublyNode nextNode = currentNode.next;
+            currentNode.prev = null;
+            currentNode.next = null;
+            nextNode.prev = null;
+            currentNode = nextNode;
+
+        }
+        head = tail = null;
     }
 
     private static void deleteNodeFromDoublyLinkedList(int position) {
@@ -69,6 +89,7 @@ public class DoublyLinkedList {
 
     private static void reverseTraversalDoublyLinkedList(DoublyNode tail) {
         if(tail == null) {
+            System.out.println("Traversal of DoublyLinkedList is empty");
             return;
         }
         DoublyNode current = tail;
@@ -84,6 +105,7 @@ public class DoublyLinkedList {
 
     private static void traversalDoublyLinkedList(DoublyNode head) {
         if (head == null) {
+            System.out.println("Nothing to traverse");
             return;
         }
         DoublyNode current = head;
