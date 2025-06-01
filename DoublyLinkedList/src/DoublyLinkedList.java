@@ -6,7 +6,51 @@ public class DoublyLinkedList {
     public static void main(String[] args) {
 
         DoublyNode node = createDoublyLinkedList(100);
-        System.out.println(head.prev+" | "+head.value+" | "+head.next);
+
+        insertNodeIntoDoubleLinkedList(25, 5);
+        insertNodeIntoDoubleLinkedList(50, 2);
+        System.out.print(head.prev+" | "+head.value+" | "+head.next+" -> ");
+        System.out.print(head.next.prev+" | "+head.next.value+" | "+head.next.next+" -> ");
+        System.out.print(head.next.next.prev+" | "+head.next.next.value+" | "+head.next.next.next);
+
+    }
+
+    private static void insertNodeIntoDoubleLinkedList(int nodeValue, int position) {
+        if(head == null) {
+            createDoublyLinkedList(nodeValue);
+        }else {
+            if(position == 1) {
+                DoublyNode newNode = new DoublyNode();
+                newNode.value = nodeValue;
+                newNode.prev = null;
+                head.prev = newNode;
+                newNode.next = head;
+                head = newNode;
+                size++;
+            } else if (position > size) {
+                DoublyNode newNode = new DoublyNode();
+                newNode.value = nodeValue;
+                newNode.prev = tail;
+                newNode.next = null;
+                tail.next = newNode;
+                tail = newNode;
+                size++;
+            }else{
+                int currentPosition = 1;
+                DoublyNode tempNode = head;
+                while(currentPosition < position-1) {
+                    tempNode = tempNode.next;
+                    currentPosition++;
+                }
+                DoublyNode newNode = new DoublyNode();
+                newNode.value = nodeValue;
+                newNode.prev = tempNode;
+                newNode.next = tempNode.next;
+                tempNode.next.prev = newNode;
+                tempNode.next = newNode;
+                size++;
+            }
+        }
 
     }
 
