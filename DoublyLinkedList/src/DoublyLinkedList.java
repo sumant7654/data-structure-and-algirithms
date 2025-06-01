@@ -9,10 +9,23 @@ public class DoublyLinkedList {
 
         insertNodeIntoDoubleLinkedList(25, 5);
         insertNodeIntoDoubleLinkedList(50, 2);
-        System.out.print(head.prev+" | "+head.value+" | "+head.next+" -> ");
-        System.out.print(head.next.prev+" | "+head.next.value+" | "+head.next.next+" -> ");
-        System.out.print(head.next.next.prev+" | "+head.next.next.value+" | "+head.next.next.next);
+        traverseDoubleLinkedList(head);
 
+
+    }
+
+    private static void traverseDoubleLinkedList(DoublyNode head) {
+        if (head == null) {
+            return;
+        }
+        DoublyNode current = head;
+        while (current != null) {
+            System.out.print(current.prev+" | "+current.value+" | "+current.next);
+            if(current.next != null) {
+                System.out.print(" <-> ");
+            }
+            current = current.next;
+        }
     }
 
     private static void insertNodeIntoDoubleLinkedList(int nodeValue, int position) {
