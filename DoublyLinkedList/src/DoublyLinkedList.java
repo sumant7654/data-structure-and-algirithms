@@ -9,12 +9,29 @@ public class DoublyLinkedList {
 
         insertNodeIntoDoubleLinkedList(25, 5);
         insertNodeIntoDoubleLinkedList(50, 2);
-        traverseDoubleLinkedList(head);
+        traversalDoublyLinkedList(head);
+        System.out.println();
+        reverseTraversalDoublyLinkedList(tail);
 
 
     }
 
-    private static void traverseDoubleLinkedList(DoublyNode head) {
+    private static void reverseTraversalDoublyLinkedList(DoublyNode tail) {
+        if(tail == null) {
+            return;
+        }
+        DoublyNode current = tail;
+        while(current != null) {
+
+            System.out.print(current.next+" | "+current.value+" | "+current.prev);
+            if(current.prev != null) {
+                System.out.print(" <-> ");
+            }
+            current = current.prev;
+        }
+    }
+
+    private static void traversalDoublyLinkedList(DoublyNode head) {
         if (head == null) {
             return;
         }
