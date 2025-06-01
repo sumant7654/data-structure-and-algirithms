@@ -5,15 +5,36 @@ public class DoublyLinkedList {
 
     public static void main(String[] args) {
 
-        DoublyNode node = createDoublyLinkedList(100);
+        createDoublyLinkedList(100);
 
         insertNodeIntoDoubleLinkedList(25, 5);
         insertNodeIntoDoubleLinkedList(50, 2);
         traversalDoublyLinkedList(head);
         System.out.println();
         reverseTraversalDoublyLinkedList(tail);
+        System.out.println();
+        searchNodeValueInDoublyLinkedList(head, 50);
 
 
+    }
+
+    private static void searchNodeValueInDoublyLinkedList(DoublyNode head, int nodeValue) {
+        if (head == null) {
+            return;
+        }
+        DoublyNode current = head;
+        int currentPosition = 1;
+        while (current != null) {
+            if(current.value == nodeValue){
+                System.out.println(current.value+" found at position "+currentPosition);
+                break;
+            }
+            currentPosition++;
+            current = current.next;
+        }
+        if(current == null){
+            System.out.println("Node not found");
+        }
     }
 
     private static void reverseTraversalDoublyLinkedList(DoublyNode tail) {
