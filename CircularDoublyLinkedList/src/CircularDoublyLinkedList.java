@@ -1,3 +1,4 @@
+
 public class CircularDoublyLinkedList {
     static DoublyNode head;
     static DoublyNode tail;
@@ -10,11 +11,36 @@ public class CircularDoublyLinkedList {
         insertNodeIntoCircularDoublyLinkedList(100, 2);
         insertNodeIntoCircularDoublyLinkedList(200, 4);
         traversalCircularDoublyLinkedList(head);
+        reverseTraversalCircularDoublyLinkedList(tail);
+
+    }
+
+    private static void reverseTraversalCircularDoublyLinkedList(DoublyNode tail) {
+        System.out.println("Reversed doubly linked list");
+        if (tail == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        int counter = size;
+        DoublyNode current = tail;
+        while (counter > 0) {
+            System.out.print(current.next+"\t"+current.value+"\t"+current.prev);
+            if(current != head) {
+                System.out.print(" -> ");
+            }
+            current = current.prev;
+            counter--;
+        }
+
 
     }
 
     private static void traversalCircularDoublyLinkedList(DoublyNode head) {
         System.out.println("Traversal of Circular Doubly Linked List");
+        if(head == null){
+            System.out.println("No Elements in the List");
+            return;
+        }
         int counter = 1;
         DoublyNode current = head;
         while (counter <= size) {
