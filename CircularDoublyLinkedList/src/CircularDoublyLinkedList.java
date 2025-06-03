@@ -12,6 +12,27 @@ public class CircularDoublyLinkedList {
         insertNodeIntoCircularDoublyLinkedList(200, 4);
         traversalCircularDoublyLinkedList(head);
         reverseTraversalCircularDoublyLinkedList(tail);
+        searchNodeInCircularDoublyLinkedList(250);
+
+    }
+
+    private static void searchNodeInCircularDoublyLinkedList(int nodeValue) {
+        System.out.println("Searching node " + nodeValue + " in circular doubly list.");
+        if(head == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        int counter = 1;
+        DoublyNode current = head;
+        while(counter <= size) {
+            if(current.value == nodeValue) {
+                System.out.println("Node Value = "+nodeValue +" is found at position "+counter);
+                return;
+            }
+            current = current.next;
+            counter++;
+        }
+        System.out.println("Node Value = "+nodeValue +" is not found!");
 
     }
 
@@ -31,6 +52,7 @@ public class CircularDoublyLinkedList {
             current = current.prev;
             counter--;
         }
+        System.out.println();
 
 
     }
