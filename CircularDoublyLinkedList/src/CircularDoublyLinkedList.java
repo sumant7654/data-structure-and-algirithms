@@ -13,7 +13,38 @@ public class CircularDoublyLinkedList {
         traversalCircularDoublyLinkedList(head);
         reverseTraversalCircularDoublyLinkedList(tail);
         searchNodeInCircularDoublyLinkedList(250);
+        deleteNodeFromCircularDoublyLinkedList(4);
+        traversalCircularDoublyLinkedList(head);
 
+    }
+
+    private static void deleteNodeFromCircularDoublyLinkedList(int position) {
+        System.out.println("Deleting node at position " + position);
+        if(head == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        if(position == 1) {
+            head = head.next;
+            head.prev = tail;
+            tail.next = head;
+
+        }else if(position >= size) {
+            tail = tail.prev;
+            tail.next = head;
+            head.prev = tail;
+
+        }else{
+            int counter = 1;
+            DoublyNode current = head;
+            while(counter < position - 1) {
+                current = current.next;
+                counter++;
+            }
+            current.next = current.next.next;
+            current.next.prev = current;
+        }
+        size--;
     }
 
     private static void searchNodeInCircularDoublyLinkedList(int nodeValue) {
