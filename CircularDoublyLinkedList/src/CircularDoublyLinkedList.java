@@ -9,12 +9,23 @@ public class CircularDoublyLinkedList {
         insertNodeIntoCircularDoublyLinkedList(50, 1);
         insertNodeIntoCircularDoublyLinkedList(100, 2);
         insertNodeIntoCircularDoublyLinkedList(200, 4);
-        System.out.println(head.prev+"\t"+head.value+"\t"+head.next);
-        System.out.println(head.next.prev+"\t"+head.next.value+"\t"+head.next.next);
-        System.out.println(head.next.next.prev+"\t"+head.next.next.value+"\t"+head.next.next.next);
-        System.out.println(tail.prev+"\t"+tail.value+"\t"+tail.next);
+        traversalCircularDoublyLinkedList(head);
 
+    }
 
+    private static void traversalCircularDoublyLinkedList(DoublyNode head) {
+        System.out.println("Traversal of Circular Doubly Linked List");
+        int counter = 1;
+        DoublyNode current = head;
+        while (counter <= size) {
+            System.out.print(current.prev+"\t"+current.value+"\t"+current.next);
+            if(current != tail){
+                System.out.print(" -> ");
+            }
+            current = current.next;
+            counter++;
+        }
+        System.out.println();
     }
 
     private static void insertNodeIntoCircularDoublyLinkedList(int nodeValue, int position) {
@@ -33,8 +44,8 @@ public class CircularDoublyLinkedList {
 
         } else if (position > size) {
             node.next = head;
-            tail.next = node;
             node.prev = tail;
+            tail.next = node;
             head.prev = node;
             tail = node;
 

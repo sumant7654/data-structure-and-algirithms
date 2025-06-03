@@ -97,7 +97,7 @@ public class DoublyLinkedList {
 
             System.out.print(current.next+" | "+current.value+" | "+current.prev);
             if(current.prev != null) {
-                System.out.print(" <-> ");
+                System.out.print(" <-tail> ");
             }
             current = current.prev;
         }
