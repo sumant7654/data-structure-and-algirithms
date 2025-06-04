@@ -15,7 +15,26 @@ public class CircularDoublyLinkedList {
         searchNodeInCircularDoublyLinkedList(250);
         deleteNodeFromCircularDoublyLinkedList(4);
         traversalCircularDoublyLinkedList(head);
+        deleteEntireDoublyLinkedList();
+        traversalCircularDoublyLinkedList(head);
 
+    }
+
+    private static void deleteEntireDoublyLinkedList() {
+        if(head == null){
+            System.out.println("The list is empty");
+            return;
+        }
+        DoublyNode current = head;
+        head = null;
+        while(current != null){
+            DoublyNode temp = current;
+            current = current.next;
+            temp.next = null;
+            temp.prev = null;
+        }
+        tail = null;
+        size = 0;
     }
 
     private static void deleteNodeFromCircularDoublyLinkedList(int position) {
