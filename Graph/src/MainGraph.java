@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class MainGraph {
     public static void main(String[] args) {
         ArrayList<GraphNode> nodeList = new ArrayList<>();
         nodeList.add(new GraphNode("A", 0));
@@ -20,5 +20,7 @@ public class Main {
 
         g.addUndirectedEdge(3, 4);
         System.out.println(g.toString());
+
+        g.bfs();
     }
 }
