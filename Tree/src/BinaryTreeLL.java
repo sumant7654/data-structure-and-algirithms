@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -118,6 +120,86 @@ public class BinaryTreeLL {
                 queue.add(currentNode.left);
                 queue.add(currentNode.right);
             }
+        }
+    }
+
+    /**
+     * Binary Tree Delete ->
+     * Use Level Order Traversal
+     * Step 1 - Find the Node
+     * Step 2 - Find Deepest Node
+     * Step 3 - Set Deepest Node's value to Current Node
+     * Step 4 - Delete Deepest Node
+     */
+    void deleteNode(String value){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryNode currentNode = queue.remove();
+            if(currentNode.value.equals(value)){
+                currentNode.value = getDeepestNode().value;
+                deleteDeepestNode();
+                System.out.println("The node is deleted");
+                return;
+            } else {
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
+                }
+            }
+
+        }
+        System.out.println("The node does not exist in Binary Tree");
+
+    }
+    /**
+    * Get Deepest Node
+    */
+
+    BinaryNode getDeepestNode(){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        BinaryNode currentNode = null;
+        while(!queue.isEmpty()){
+            currentNode = queue.remove();
+            if(currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
+
+        }
+        return currentNode;
+    }
+
+    void deleteDeepestNode(){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        BinaryNode previousNode=null, currentNode = null;
+        while(!queue.isEmpty()){
+            currentNode = queue.remove();
+
+            if(currentNode.left != null){
+                previousNode = currentNode;
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                previousNode = currentNode;
+                queue.add(currentNode.right);
+            }
+        }
+
+        if(previousNode != null){
+            if (previousNode.right == currentNode){
+                previousNode .right = null;
+            }else{
+                previousNode.left = null;
+            }
+        }else{
+            root = null;
         }
     }
 

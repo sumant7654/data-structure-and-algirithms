@@ -51,5 +51,20 @@ public class BinaryTreeMain {
         binaryTree.insert("N10");
         binaryTree.levelOrder();
 
+        System.out.print("\nDeepest Node :: ");
+        System.out.println(binaryTree.getDeepestNode().value);
+
+        binaryTree.deleteDeepestNode();
+
+        System.out.print("\nDeepest Node :: ");
+        System.out.println(binaryTree.getDeepestNode().value);
+
+        binaryTree.deleteNode("N6");
+        System.out.print("\nLevelOrder Traversal :: ");
+        binaryTree.levelOrder();
+
+
+
+
     }
 }
