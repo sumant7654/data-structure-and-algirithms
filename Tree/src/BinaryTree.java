@@ -78,4 +78,14 @@ public class BinaryTree {
 
 
     }
+
+    void search(String value) {
+        for(int i = 1; i <= lastUsedIndex; i++){
+            if(value.equals(arr[i])){
+                System.out.println("\nThe value found at index:"+i);
+                return;
+            }
+        }
+        System.err.println("\nThe value not found in the tree");
+    }
 }

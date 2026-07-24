@@ -23,5 +23,7 @@ public class BinaryTreeMainWithArray {
 
         System.out.print("\nLevelOrder Traversal  :: ");
         binaryTree.levelOrder();
+
+        binaryTree.search("N6");
     }
 }
