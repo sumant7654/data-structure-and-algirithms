@@ -29,4 +29,18 @@ public class BinaryTreeLL {
         inOrder(node.right);
     }
 
+    /**
+     * PostOrder Traversal ->
+     * First Visit the Left SubTree then Right Subtree after that Root Node
+     */
+
+    void postOrder(BinaryNode node){
+        if(node == null){
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.value+" ");
+    }
+
 }

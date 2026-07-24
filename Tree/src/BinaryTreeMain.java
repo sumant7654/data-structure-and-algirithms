@@ -34,11 +34,14 @@ public class BinaryTreeMain {
 
         binaryTree.root = n1;
 
-        System.out.print("PreOrder Traversal :: ");
+        System.out.print("PreOrder Traversal  :: ");
         binaryTree.preOrder(binaryTree.root);
 
-        System.out.print("\nInOrder Traversal  :: ");
+        System.out.print("\nInOrder Traversal   :: ");
         binaryTree.inOrder(binaryTree.root);
+
+        System.out.print("\nPostOrder Traversal :: ");
+        binaryTree.postOrder(binaryTree.root);
 
     }
 }
