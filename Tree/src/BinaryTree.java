@@ -64,4 +64,18 @@ public class BinaryTree {
         postOrder(index * 2 + 1);
         System.out.print(arr[index]+" ");
     }
+
+    /**
+     * LevelOrder Traversal ->
+     * First Visit Root Level then Level 1 (Left to Right) then next level so on
+     */
+    void levelOrder(){
+        int index = 1;
+        while(index <= lastUsedIndex){
+            System.out.print(arr[index]+ " ");
+            index++;
+        }
+
+
+    }
 }

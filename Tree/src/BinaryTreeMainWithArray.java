@@ -20,5 +20,8 @@ public class BinaryTreeMainWithArray {
 
         System.out.print("\nPostOrder Traversal   :: ");
         binaryTree.postOrder(1);
+
+        System.out.print("\nLevelOrder Traversal  :: ");
+        binaryTree.levelOrder();
     }
 }
