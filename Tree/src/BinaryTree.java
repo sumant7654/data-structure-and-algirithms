@@ -88,4 +88,22 @@ public class BinaryTree {
         }
         System.err.println("\nThe value not found in the tree");
     }
+
+    void delete(String value){
+        for(int i = 1; i <= lastUsedIndex; i++){
+            if(arr[i].equals(value)){
+                arr[i] = arr[lastUsedIndex];
+                arr[lastUsedIndex] = null;
+                lastUsedIndex--;
+                System.out.println("\nThe value deleted from tree");
+                return;
+            }
+        }
+        System.err.println("\nThe value not found in the tree");
+    }
+
+    public void deleteAllNodes() {
+        arr = null;
+        System.out.println("\nThe Binary Tree has been successfully deleted");
+    }
 }

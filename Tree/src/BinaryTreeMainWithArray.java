@@ -25,5 +25,8 @@ public class BinaryTreeMainWithArray {
         binaryTree.levelOrder();
 
         binaryTree.search("N6");
+        binaryTree.delete("N5");
+        binaryTree.levelOrder();
+        binaryTree.deleteAllNodes();
     }
 }
