@@ -12,7 +12,13 @@ public class BinaryTreeMainWithArray {
         binaryTree.insert("N9");
 
 
-        System.out.print("PreOrder Traversal    :: ");
+        System.out.print("\nPreOrder Traversal    :: ");
         binaryTree.preOrder(1);
+
+        System.out.print("\nInOrder Traversal     :: ");
+        binaryTree.inOrder(1);
+
+        System.out.print("\nPostOrder Traversal   :: ");
+        binaryTree.postOrder(1);
     }
 }

@@ -37,4 +37,31 @@ public class BinaryTree {
         preOrder(index * 2);
         preOrder(index * 2 + 1);
     }
+
+    /**
+     * InOrder Traversal ->
+     * First Visit the Left Node then Root Node of the Sub-Tree after that Right Node
+     */
+
+    void inOrder(int index){
+        if(index > lastUsedIndex){
+            return;
+        }
+        inOrder(index * 2);
+        System.out.print(arr[index]+" ");
+        inOrder(index * 2 + 1);
+
+    }
+    /**
+     * PostOrder Traversal ->
+     * First Visit the Left SubTree then Right Subtree after that Root Node
+     */
+    void postOrder(int index) {
+        if(index > lastUsedIndex){
+            return;
+        }
+        postOrder(index * 2);
+        postOrder(index * 2 + 1);
+        System.out.print(arr[index]+" ");
+    }
 }
