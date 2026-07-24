@@ -48,5 +48,8 @@ public class BinaryTreeMain {
 
         binaryTree.search("N5");
 
+        binaryTree.insert("N10");
+        binaryTree.levelOrder();
+
     }
 }
