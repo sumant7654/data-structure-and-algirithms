@@ -46,5 +46,7 @@ public class BinaryTreeMain {
         System.out.print("\nLevelOrder Traversal :: ");
         binaryTree.levelOrder();
 
+        binaryTree.search("N5");
+
     }
 }

@@ -65,5 +65,29 @@ public class BinaryTreeLL {
         }
 
     }
+    /**
+    * Binary Tree Search ->
+    * For search use LevelOrder because Queue is better than Stack
+    */
+    void search(String value){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryNode currentNode = queue.remove();
+            if(currentNode.value.equals(value)){
+                System.out.println("\nThe value "+value+" found in tree");
+                return;
+            }else{
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
+                }
+            }
+        }
+        System.err.println("\nThe value "+value+" not found");
+    }
+
 
 }
